@@ -1,0 +1,21 @@
+package refactoringjavastudy.chapter01;
+
+import java.util.Map;
+
+public class Plays {
+
+    Map<String, Play> plays;
+
+    public Plays(Map<String, Play> plays) {
+        this.plays = plays;
+    }
+
+    public Map<String, Play> getPlays() {
+        return plays;
+    }
+
+    public Play get(Performance performance) {
+        return plays.get(performance.getPlayID());
+    }
+
+}
