@@ -2,8 +2,6 @@ package refactoringjavastudy;
 
 import java.util.List;
 import java.util.Map;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import refactoringjavastudy.chapter01.Invoice;
 import refactoringjavastudy.chapter01.Performance;
 import refactoringjavastudy.chapter01.Play;
@@ -11,7 +9,6 @@ import refactoringjavastudy.chapter01.PlayType;
 import refactoringjavastudy.chapter01.Plays;
 import refactoringjavastudy.chapter01.Statement;
 
-//@SpringBootApplication
 public class RefactoringJavaStudyApplication {
 
     public static void main(String[] args) throws Exception {
@@ -34,7 +31,6 @@ public class RefactoringJavaStudyApplication {
 
         );
         System.out.println(result);
-//        SpringApplication.run(RefactoringJavaStudyApplication.class, args);
     }
 
 }
