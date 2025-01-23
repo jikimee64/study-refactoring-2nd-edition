@@ -32,7 +32,7 @@ public class StatementData {
     }
 
     public int amountFor(Performance performance) throws Exception {
-        return performanceCalculatorFactory.createPerformanceCalculator(performance, playFor(performance)).amountFor(performance);
+        return performanceCalculatorFactory.createPerformanceCalculator(performance, playFor(performance)).amountFor();
     }
 
     public int totalAmount() throws Exception {
