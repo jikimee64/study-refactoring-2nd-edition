@@ -1,4 +1,8 @@
-package refactoringjavastudy.chapter01;
+package refactoringjavastudy.chapter01.factory;
+
+import refactoringjavastudy.chapter01.Performance;
+import refactoringjavastudy.chapter01.Play;
+import refactoringjavastudy.chapter01.PlayType;
 
 public class PerformanceCalculator {
 
@@ -10,7 +14,7 @@ public class PerformanceCalculator {
         this.play = play;
     }
 
-    public int amountFor(Performance performance) throws Exception {
+    public int amountFor() throws Exception {
         int result;
         switch (play.getType()) {
             case TRAGEDY:
