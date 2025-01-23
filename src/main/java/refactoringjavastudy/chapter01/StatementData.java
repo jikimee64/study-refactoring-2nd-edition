@@ -1,15 +1,18 @@
 package refactoringjavastudy.chapter01;
 
 import java.util.List;
+import refactoringjavastudy.chapter01.factory.PerformanceCalculatorFactory;
 
 public class StatementData {
 
     private Invoice invoice;
     private Plays plays;
+    private PerformanceCalculatorFactory performanceCalculatorFactory;
 
     public StatementData(Invoice invoice, Plays plays) {
         this.invoice = invoice;
         this.plays = plays;
+        this.performanceCalculatorFactory = new PerformanceCalculatorFactory();
     }
 
     public String getCustomer() {
@@ -29,7 +32,7 @@ public class StatementData {
     }
 
     public int amountFor(Performance performance) throws Exception {
-        return new PerformanceCalculator(performance, playFor(performance)).amountFor(performance);
+        return performanceCalculatorFactory.createPerformanceCalculator(performance, playFor(performance)).amountFor(performance);
     }
 
     public int totalAmount() throws Exception {
@@ -40,7 +43,7 @@ public class StatementData {
         return totalAmount / 100;
     }
 
-    public int totalVolumeCredits() {
+    public int totalVolumeCredits() throws Exception {
         int volumeCredit = 0;
         for (Performance performance : invoice.getPerformances()) {
             volumeCredit += volumeCreditFor(performance);
@@ -48,7 +51,7 @@ public class StatementData {
         return volumeCredit;
     }
 
-    private int volumeCreditFor(Performance performance) {
-        return new PerformanceCalculator(performance, playFor(performance)).volumeCreditFor(performance);
+    private int volumeCreditFor(Performance performance) throws Exception{
+        return performanceCalculatorFactory.createPerformanceCalculator(performance, playFor(performance)).volumeCreditFor(performance);
     }
 }
