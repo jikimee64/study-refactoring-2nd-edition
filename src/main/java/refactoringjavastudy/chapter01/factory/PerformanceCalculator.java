@@ -6,7 +6,7 @@ import refactoringjavastudy.chapter01.PlayType;
 
 public class PerformanceCalculator {
 
-    private Performance performance;
+    protected Performance performance;
     private Play play;
 
     public PerformanceCalculator(Performance performance, Play play) {
